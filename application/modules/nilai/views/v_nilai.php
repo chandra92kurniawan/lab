@@ -90,7 +90,7 @@
 					
 					
 				<div class="body"  >
-                    <form onsubmit="return byForm()" class="form-horizontal add-edit" action="<?php echo base_url()?>nilai/tambah_data" method="POST" id="popup-validation">
+                    <form onsubmit="return byForm()" class="form-horizontal add-edit" action="<?php echo base_url()?>menu/add" method="POST" id="popup-validation">
 				
 				<div class="form-group" style="display:none">
                         <label class="col-sm-2 control-label">ID Nilai</label>
@@ -100,7 +100,7 @@
 				 </div>        
 				
                  <div class="form-group">
-                        <label class="col-sm-2 control-label">Pelajaran</label>
+                        <label class="col-sm-2 control-label">Mata Pelajaran</label>
                         <div class="col-sm-5">
 							<?php echo form_dropdown('id_mata_pelajaran',$dt_pelajaran,'',"class='form-control' id='d_mata_pelajaran'"); ?>
                        </div>
@@ -112,10 +112,23 @@
 							<?php echo form_dropdown('nik',$dt_nik,'',"class='form-control' id='d_nik'"); ?>
                         </div>
                     </div>
-							
+					
+					<div class="form-group">
+                        <label class="col-sm-2 control-label">Tanggal</label>
+                        <div class="col-sm-5">
+							<input type="date" name="tanggal" id="d_tanggal"> 
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Keterangan</label>
+                        <div class="col-sm-5">
+							<input type="text" name="keterangan" id="d_keterangan">
+                        </div>
+                    </div>		
 					
 					
-					   <div class="form-group">
+				   <div class="form-group">
 					<label class="col-sm-2 control-label"></label>
 					<div class="col-sm-5">
 					  <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-disk"></i> Simpan</button> <button class="btn btn-danger" type="button" id="back"><i class="glyphicon glyphicon-remove"></i> Batal</button>
@@ -133,11 +146,12 @@
       $('#btn-add').click(function(){
         $('#frm-list').toggle();
         $('#frm-add').fadeIn('slow');
-        $('.add-edit').attr('action',"<?php echo base_url()?>jadwal/tambah_data");
-        $('#d_id_kelas').val('');
-		$('#d_nik').val('');
+        $('.add-edit').attr('action',"<?php echo base_url()?>nilai/tambah_data");
+        $('#d_id_nilai').val('');
+		$('#d_keterangan').val('');
 		$('#d_id_mata_pelajaran').val('');
-		
+		$('#d_nik').val('');
+		$('#d_tanggal').val('');	
       });
 	  
       $('#back').click(function(){
@@ -147,17 +161,17 @@
 	  </script>
 	  
 	  <script>
-     function edit(id_kelas,id_jadwal,nik,id_mata_pelajaran)
+     function edit(id_nilai,id_mata_pelajaran,nik,tanggal,keterangan)
       {
-        $('#judul').html("Edit Jadwal");
-	   $('#d_id_kelas').val(id_kelas);
-	   $('#d_id_jadwal').val(id_jadwal);
+       $('#judul').html("EditNilai");
+	   $('#d_id_nilai').val(id_nilai);
+	   $('#d_id_mata_pelajaran').val(id_mata_pelajaran);
 	   $('#d_nik').val(nik);
-		$('#d_id_mata_pelajaran').val(id_mata_pelajaran);
-        $('.add-edit').attr('action',"<?php echo base_url()?>jadwal/edit");
-        $('#frm-list').toggle();
-       
-        $('#frm-add').fadeIn('slow');
+       $('#d_tanggal').val(tanggal);
+       $('#d_keterangan').val(keterangan)
+       $('.add-edit').attr('action',"<?php echo base_url()?>nilai/edit");
+       $('#frm-list').toggle();
+       $('#frm-add').fadeIn('slow');
       }      
 	  
     </script>

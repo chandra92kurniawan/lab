@@ -27,6 +27,18 @@ var $table='nilai';
 	}
 	
 	
+
+	function masukan_data($data)
+	{
+		$this->db->insert('nilai', $data);
+	}
+	
+	
+	function masukan_data_dtl($data)
+	{
+		$this->db->insert('jadwal_dtl',$data);
+	}
+
 	function getDetail($x)
 	{
 		$qry=" SELECT * FROM

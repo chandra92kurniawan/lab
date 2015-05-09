@@ -8,25 +8,31 @@ class Nilai extends CI_Controller {
 		$st=$this->session->userdata('login');
 		if($st!=true)
 		{
-			redirect('home');
+			redirect('nilai');
 		}
 	}
+
+
+
 	public function index()
 	{
-			$id_pelajaran=$this->M_nilai->dropdownpelajaran();
-			foreach($id_pelajaran as $cihuy)
+		
+		$id_pelajaran=$this->M_nilai->dropdownpelajaran();
+		foreach($id_pelajaran as $cihuy)
 		{
-			$c[$cihuy->id_mata_pelajaran]=$cihuy->id_mata_pelajaran;
+			$c[$cihuy->id_mata_pelajaran]=$cihuy->nama_pelajaran;
 		}
 		$data['dt_pelajaran']=$c;
 			
+
 		$nik=$this->M_nilai->dropdownnik();
 		foreach($nik as $unyu)
 		{
-			$p[$unyu->nik]=$unyu->nik;
+			$p[$unyu->nik]=$unyu->nama_guru;
 		}
 		$data['dt_nik']=$p;
 		
+
 		$data['list']=$this->M_nilai->tampil_data();
 		$this->load->view('v_nilai', $data);
 	}
@@ -55,7 +61,7 @@ class Nilai extends CI_Controller {
 	$this->M_nilai->hapus($id);
 	print_r ($id);
 	$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Data Admin berhasil dihapus</strong> .</div>");
-	redirect("jadwal");
+	redirect("nilai");
 	}
 	
 	function edit()
@@ -70,7 +76,7 @@ class Nilai extends CI_Controller {
 					);
 		$this->M_nilai->update($data,$this->input->post('id_nilai'));
 		$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Kelas berhasil diubah</strong> .</div>");
-		redirect("nilai");
+		$$this->load->view ("v_nilai");
 	}
 	
 	
