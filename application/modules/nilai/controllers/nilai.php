@@ -13,14 +13,7 @@ class Nilai extends CI_Controller {
 	}
 	public function index()
 	{
-	$id_kelas=$this->M_nilai->dropdown();
-		foreach($id_kelas as $unyu)
-		{
-			$p[$unyu->id_kelas]=$unyu->id_kelas;
-		}
-		$data['dt_nama']=$p;
-		
-			$id_pelajaran=$this->M_jadwal->dropdownpelajaran();
+			$id_pelajaran=$this->M_nilai->dropdownpelajaran();
 			foreach($id_pelajaran as $cihuy)
 		{
 			$c[$cihuy->id_mata_pelajaran]=$cihuy->id_mata_pelajaran;
@@ -35,7 +28,7 @@ class Nilai extends CI_Controller {
 		$data['dt_nik']=$p;
 		
 		$data['list']=$this->M_nilai->tampil_data();
-		$this->load->view('v_jadwal', $data);
+		$this->load->view('v_nilai', $data);
 	}
 	
 	
@@ -44,22 +37,22 @@ class Nilai extends CI_Controller {
 	
 		$data=array (
 		
-		'id_jadwal' 	=>$this->input->post ('id_jadwal'),
-		'id_kelas'		=>$this->input->post ('id_kelas'),
-		'jam_awal'		=>$this->input->post ('jam_awal'),
-		'jam_akhir'		=>$this->input->post ('jam_akhir'),
-		'hari'		=>$this->input->post ('hari'),
-		'id_mata_pelajaran'=>$this->input->post ('id_mata_pelajaran')
+		'id_nilai' 			=>$this->input->post ('id_nilai'),
+		'id_mata_pelajaran'	=>$this->input->post ('id_mata_pelajaran'),
+		'tanggal'			=>$this->input->post ('tanggal'),
+		'keterangan'		=>$this->input->post ('keterangan'),
+		'nik'				=>$this->input->post ('nik')
+		
 		);
 		$this->M_nilai->masukan_data($data);
 		$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Data  berhasil ditambah</strong> .</div>");
-		redirect ('jadwal/index');
+		redirect ('nilai/index');
 	}
 	
 	
 	function hapus($id){
 	//$id=>$this->input->post('id_mata_pelajaran');
-	$this->M_jadwal->hapus($id);
+	$this->M_nilai->hapus($id);
 	print_r ($id);
 	$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Data Admin berhasil dihapus</strong> .</div>");
 	redirect("jadwal");
@@ -67,17 +60,17 @@ class Nilai extends CI_Controller {
 	
 	function edit()
 	{
-		$data=array("id_jadwal"=>$this->input->post('id_jadwal'),
-					"id_kelas"=>$this->input->post('id_kelas'),
-					"id_mata_pelajaran"=>$this->input->post('id_mata_pelajaran'),
-					"nik"=>$this->input->post('nik'),
-					"jam_awal"=>$this->input->post('jam_awal'),
-					"jam_akhir"=>$this->input->post ('jam_akhir'),
-					"hari"=>$this->input->post('hari')
+		$data=array(
+
+		'id_nilai' 		=>$this->input->post ('id_nilai'),
+		'id_mata_pelajaran'			=>$this->input->post ('id_mata_pelajaran'),
+		'tanggal'					=>$this->input->post ('tanggal'),
+		'keterangan'				=>$this->input->post ('keterangan'),
+		'nik'						=>$this->input->post ('nik')
 					);
-		$this->M_jadwal->update($data,$this->input->post('id_jadwal'));
+		$this->M_nilai->update($data,$this->input->post('id_nilai'));
 		$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Kelas berhasil diubah</strong> .</div>");
-		redirect("jadwal");
+		redirect("nilai");
 	}
 	
 	

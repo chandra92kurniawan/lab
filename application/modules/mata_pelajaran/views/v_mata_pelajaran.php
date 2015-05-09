@@ -33,7 +33,7 @@
 					
 			<thead>
 		<tr>
-		<th>ID Mata Pelajaran</th>
+		
 		<th>Nama Pelajaran</th>
 		<th>Inisial </th>
 		<th>Opsi</th>
@@ -45,7 +45,7 @@
 	<tbody>
 		 <?php $no=0;foreach($list as $data){?>
                         <tr>
-                          <td><?php echo $data->id_mata_pelajaran;?></td>
+                          
                           <td><?php echo $data->nama_pelajaran;?></td>
                           <td><?php echo $data->inisial_nama_pelajaran;?></td>
                           
