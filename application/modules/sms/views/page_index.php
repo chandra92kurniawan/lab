@@ -20,7 +20,7 @@
                         <a href="javascript:;" class="btn btn-danger btn-xs close-box">
                           <i class="fa fa-times"></i>
                         </a> --> 
-                        <a href="#" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">
+                        <a href="#" class="btn btn-success btn-xs" id="btn-pesan">
                           <i class="fa fa-plus"></i> Kirim Pesan
                         </a>
                       </nav>
@@ -44,47 +44,59 @@
               </div>
             </div>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Kirim SMS</h4>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="<?php echo base_url()?>sms/kirim">
-		  <div class="form-group">
-		    <label for="inputEmail3" class="col-sm-3 control-label">Orangtua dari</label>
-		    <div class="col-sm-8">
-		    	<input type="text" id="search"  name="nis" placeholder="Masukan NIS atau Nama Siswa">
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <label for="inputEmail3" class="col-sm-3 control-label">Pesan</label>
-		    <div class="col-sm-8">
-		    	<textarea id="autosize" name="pesan" class="form-control"></textarea>
-		    </div>
-		  </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary">Kirim</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div>
-	<form class="form-horizontal">
-		<div class="form-group">
-		    <label for="inputEmail3" class="col-sm-3 control-label">Pesan</label>
-		    <div class="col-sm-8">
-		    	<input type="text" id="search3" class="form-control">
-		    </div>
-		  </div>
-	</form>
-</div>
+
+          <div class="row" id="frm-kirim" style="display:none">
+              <div class="col-lg-12">
+                <div class="box ">
+                  <header class="dark">
+                    <div class="icons">
+                      <i class="fa fa-table"></i>
+                    </div>
+                    <h5>SMS</h5>
+
+                    <!-- .toolbar -->
+                    <div class="toolbar">
+                      <nav style="padding: 8px;">
+                        <!--<a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                          <i class="fa fa-minus"></i>
+                        </a> 
+                        <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                          <i class="fa fa-expand"></i>
+                        </a> 
+                        <a href="javascript:;" class="btn btn-danger btn-xs close-box">
+                          <i class="fa fa-times"></i>
+                        </a> --> 
+                        
+                      </nav>
+                    </div><!-- /.toolbar -->
+                  </header>
+                  <div class="body">
+                    <form class="form-horizontal">
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">Orang tua dari</label>
+                        <div class="col-sm-8">
+                          <input type="text" id="search3" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">Pesan</label>
+                        <div class="col-sm-8">
+                          <textarea id="autosize" name="pesan" class="form-control"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-8">
+                          <input type="submit" class="btn btn-primary" value="Kirim"> <button type="button" class="btn btn-danger" id="back">Kembali</button>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+            </div>
+
+
 <script type="text/javascript">
 /*$('#search').typeahead({
 	source:function(query,process){
@@ -93,10 +105,18 @@
 		});
 	}
 });*/
+  $('#btn-pesan').click(function(){
+    $('#frm-kirim').show('slow');
+    $('#frm-list').hide();
+  });
+  $('#back').click(function(){
+    $('#frm-list').show('slow');
+    $('#frm-kirim').hide();
+  });
 	$(function(){
 		$('#search3').autocomplete({
 			source:'<?php echo base_url()?>sms/get',
-			minLength:3,
+			minLength:2,
 			items:3,
 			autoSelect:true
 		})
@@ -104,7 +124,7 @@
 	$(function(){
 		$('#search').autocomplete({
 			source:'<?php echo base_url()?>sms/get',
-			items:3,
+			items:2,
 			autoSelect:true
 		})
 	});

@@ -1,8 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_absensi extends CI_Model {
-	function getList()
+	function getList($date)
 	{
+		$this->db->where('hari_inggris', $date);
 		$this->db->join('hari', 'hari.id_hari=jadwal_dtl.id_hari');
 		$this->db->join('jadwal', 'jadwal.id_jadwal=jadwal_dtl.id_jadwal');
 		$this->db->join('guru', 'guru.nik=jadwal.nik');
@@ -38,7 +39,7 @@ class M_absensi extends CI_Model {
 		$this->db->where('status', '1');
 		$this->db->where('id_kelas',$id_kelas);
 		$this->db->order_by('nis', 'asc');
-		return $this->db->get('siswa')->result();
+		return $this->db->get('iswa')->result();
 	}
 	function getSiswaByJadwal($idAbsensi)
 	{

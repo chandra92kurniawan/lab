@@ -7,8 +7,9 @@ class Absensi extends CI_Controller {
 		$this->load->model('m_absensi');
 	}
 	public function index()
-	{
-		$data['list']=$this->m_absensi->getList();
+	{	
+		$date=date('D');
+		$data['list']=$this->m_absensi->getList($date);
 		$this->load->view('page_index', $data);
 	}
 	function getSiswa($id_jadwal)
