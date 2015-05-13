@@ -1,6 +1,6 @@
 <?php $this->load->view('top');?>
 			   <div class="row" id="frm-list">
-         <form role='form' method="POST" action="<?php echo base_url()?>absensi/presensi/<?php echo $this->uri->segment(3);?>">
+         <form role='form' method="POST" action="<?php echo base_url()?>rekap_presensi/presensi/<?php echo $this->uri->segment(3);?>/<?php echo $this->uri->segment(4);?>">
               <div class="col-lg-8">
                 <div class="box ">
                   <header class="dark">

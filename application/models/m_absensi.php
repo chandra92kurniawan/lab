@@ -39,7 +39,7 @@ class M_absensi extends CI_Model {
 		$this->db->where('status', '1');
 		$this->db->where('id_kelas',$id_kelas);
 		$this->db->order_by('nis', 'asc');
-		return $this->db->get('iswa')->result();
+		return $this->db->get('siswa')->result();
 	}
 	function getSiswaByJadwal($idAbsensi)
 	{
