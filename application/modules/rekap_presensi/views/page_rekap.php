@@ -7,6 +7,7 @@
 	<script src="<?php echo base_url()?>bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container">
 <table border="1" class="table table-bordered table-condensed table-hover table-striped">
 	<thead>
 		<tr>
@@ -20,7 +21,7 @@
 			<th>NIS</th>
 			<th>Nama Siswa</th>
 			<?php $no=0;foreach($absen as $a){?>
-			<th><a href="#" title="<?php echo $a->tanggal;?>"><?php echo ++$no;?></a> </th>
+			<th><a href="<?php echo base_url()?>rekap_presensi/detail/<?php echo $a->id_jadwal_dtl;?>/<?php echo $a->id_absensi;?>" title="<?php echo $a->tanggal;?>"><?php echo ++$no;?></a> </th>
 			<?php }?>
 		</tr>
 	</thead>
@@ -43,5 +44,6 @@
 		</tr>
 	</tfoot>
 </table>
+</div>
 </body>
 </html>

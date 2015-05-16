@@ -15,6 +15,7 @@ class Absensi extends CI_Controller {
 	{
 		//echo "<pre>";
 		$data['list']=$this->getSiswaByKelas($id_jadwal,date('Y-m-d'));
+		$data['ket']=$this->db->query("select*from absensi where id_jadwal_dtl='".$id_jadwal."' and tanggal='".date('Y-m-d')."'")->row();
 		//print_r($data['list']);
 		$this->load->view('page_absen',$data);
 	}
@@ -24,19 +25,22 @@ class Absensi extends CI_Controller {
 		//$id_jadwal=$jadwal->id_jadwal;
 		$cekToDay=$this->m_absensi->toDay($jadwal_dtl,$date);
 		$no=1;
-		if($cekToDay->num_rows()==0)
+		//print_r($cekToDay->row());
+		if($cekToDay->num_rows()==1)
 		{
+			//echo "asdw";
 			$into=array('id_jadwal_dtl'=>$jadwal_dtl,'tanggal'=>$date);
 			$this->db->insert('absensi', $into);
 			$id_absensi=$this->db->insert_id();
 			$siswa=$this->m_absensi->getSiswa($jadwal->id_kelas);
+			//echo $jadwal->id_kelas;
 			foreach($siswa as $siswa){
 				$dtl=array('nis'=>$siswa->nis,
 							'absensi'=>'3',
 							'id_absensi'=>$id_absensi);
 				$this->db->insert('absensi_dtl', $dtl);
 			} 
-		}
+		}//echo "asdw";
 		$this->m_absensi->del();
 		$getIdAbsensi=$this->m_absensi->getIdAbsensi($jadwal_dtl,$date);
 		$siswax=$this->m_absensi->getSiswaByJadwal($getIdAbsensi->id_absensi);
