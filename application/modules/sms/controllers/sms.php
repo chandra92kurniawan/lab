@@ -14,18 +14,15 @@ class Sms extends CI_Controller {
 	function get()
 	{	
 		$q = strtoupper($this->input->get('term'));
-		if(is_numeric($q)){
-			$menu=$this->db->query("select nis,nama_siswa from siswa where nis like '%$q%' ")->result();	
-		}else{
-			$menu=$this->db->query("select nis,nama_siswa from siswa where nama_siswa like '%$q%' ")->result();
-		}		
+		$menu=$this->db->query("select nama_siswa from siswa  ")->result();
+		
 		foreach($menu as $menu){
-			$array[]=$menu->nis." - ".$menu->nama_siswa;
+			$array[]=$menu->nama_siswa;
 
 		}
 		print_r(json_encode($array));
 	}
-	
+
 }
 
 /* End of file sms.php */
