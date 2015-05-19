@@ -84,7 +84,7 @@
                   <div class="body">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Materi Pembelajaran</label>
-                        <textarea name="materi" class="form-control" placeholder="Materi Pembelajaran"><?php echo $ket->keterangan;?></textarea>
+                        <textarea name="materi" class="form-control" placeholder="Materi Pembelajaran"><?php if($ket){echo $ket->keterangan;}?></textarea>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Kirim</label>

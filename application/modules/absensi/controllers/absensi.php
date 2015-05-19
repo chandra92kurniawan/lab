@@ -26,7 +26,7 @@ class Absensi extends CI_Controller {
 		$cekToDay=$this->m_absensi->toDay($jadwal_dtl,$date);
 		$no=1;
 		//print_r($cekToDay->row());
-		if($cekToDay->num_rows()==1)
+		if($cekToDay->num_rows()==0)
 		{
 			//echo "asdw";
 			$into=array('id_jadwal_dtl'=>$jadwal_dtl,'tanggal'=>$date);
@@ -44,6 +44,7 @@ class Absensi extends CI_Controller {
 		$this->m_absensi->del();
 		$getIdAbsensi=$this->m_absensi->getIdAbsensi($jadwal_dtl,$date);
 		$siswax=$this->m_absensi->getSiswaByJadwal($getIdAbsensi->id_absensi);
+		//echo $getIdAbsensi->id_absensi;
 		return $siswax;
 	}	
 	function presensi($id_jadwal)// id_jadwal == id jadwal detail
