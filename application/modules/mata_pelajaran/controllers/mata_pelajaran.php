@@ -9,7 +9,7 @@ class Mata_pelajaran extends CI_Controller
 		if($st!=true)
 		{
 			redirect('home');
-		}
+		}	
 	}
 	
 	public function index()
@@ -34,9 +34,7 @@ class Mata_pelajaran extends CI_Controller
 	
 	
 	function hapus($id){
-	//$id=>$this->input->post('id_mata_pelajaran');
 	$this->M_mata_pelajaran->hapus($id);
-	//print_r ($id);
 	$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Data Admin berhasil dihapus</strong> .</div>");
 	redirect("mata_pelajaran");
 	}

@@ -41,8 +41,22 @@ class M_nilai extends CI_Model {
 		return $this->db->get('guru')->result();
 	
 	}
+
+	function dropdownkelas()
+	{
+		return $this->db->get('kelas')->result();
+	}
 	
-	
+	function getnamakelas($id)
+	{
+
+		//$this->db->select('kelas');
+		$this->db->where('id_kelas',$id);
+		$ab=$this->db->get('kelas')->row();
+		$kelas=$ab->tingkat_kelas.' '.$ab->jurusan.' '.$ab->grup_kelas;
+		return $kelas;
+	}
+
 	function tampil_data()
 	{
 		$qry = "SELECT	*
@@ -69,10 +83,7 @@ class M_nilai extends CI_Model {
 		$this->db->where('id_nilai',$id);
 		$this->db->delete('nilai');
 
-	}
-	
-	
-
+	}	
 
 
 }

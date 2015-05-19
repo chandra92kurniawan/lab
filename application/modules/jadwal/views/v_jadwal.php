@@ -100,7 +100,7 @@
                  <div class="form-group">
                         <label class="col-sm-2 control-label">Kelas</label>
                         <div class="col-sm-5">
-                         <?php echo form_dropdown('id_kelas',$dt_nama,'',"class='form-control' id='d_id_kelas'"); ?>
+                     <?php echo form_dropdown('id_kelas',$dt_nama,'',"class='form-control' id='d_id_kelas'"); ?>
                         </div>
 				   </div>                 
 					
@@ -114,7 +114,7 @@
 					<div class="form-group">
                         <label class="col-sm-2 control-label">Pelajaran</label>
                         <div class="col-sm-5">
-							<?php echo form_dropdown('id_mata_pelajaran',$dt_pelajaran,'',"class='form-control' id='d_mata_pelajaran'"); ?>
+						    	<?php echo form_dropdown('id_mata_pelajaran',$dt_pelajaran,'',"class='form-control' id='d_mata_pelajaran'"); ?>
                        </div>
 					   </div>	
 					

@@ -35,6 +35,7 @@
 		
 		<th>Mata Pelajaran</th>
 		<th>Nama Guru</th>
+    <th>Kelas</th>
 		<th>Tanggal</th>
 		<th>Keterangan</th>
 		<th>Opsi</th>
@@ -49,7 +50,8 @@
                           
               <td><?php echo $this->M_nilai->getnamapelajaran($data->id_mata_pelajaran);?></td>
 						  <td><?php echo $this->M_nilai->getnamaguru($data->nik);?></td>
-						  <td><?php echo $data->tanggal;?></td>
+						  <td><?php echo $this->M_nilai->getnamakelas($data->id_kelas);?></td>
+              <td><?php echo $data->tanggal;?></td>
               <td><?php echo $data->keterangan;?></td>                        
               <td>
 							  <a href="<?php echo base_url()?>nilai/detail/<?php echo $data->id_nilai;?>"  class="btn btn-success btn-xs"><i class="glyphicon glyphicon-list-alt")> </i> Isi Nilai</a>
@@ -57,7 +59,8 @@
 																						'<?php echo $data->id_nilai;?>',
 																						'<?php echo $data->id_mata_pelajaran;?>',																						
 																						'<?php echo $data->nik;?>',
-																						'<?php echo $data->tanggal;?>',																					
+                                            '<?php echo $data->id_kelas?>',
+																						'<?php echo $data->tanggal;?>',						
 																						'<?php echo $data->keterangan;?>'	)"><i class="glyphicon glyphicon-edit"></i> Edit</a>
   
 
@@ -116,6 +119,14 @@
                         </div>
           </div>
 					
+          <div class="form-group">
+                        <label class="col-sm-2 control-label">Kelas</label>
+                        <div class="col-sm-5">
+                     <?php echo form_dropdown('id_kelas',$dt_kelas,'',"class='form-control' id='d_kelas'"); ?>
+                        </div>
+          </div>
+
+
 					<div class="form-group">
                         <label class="col-sm-2 control-label">Tanggal</label>
                         <div class="col-sm-5">
@@ -136,7 +147,7 @@
 					               <div class="col-sm-5">
 					           <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-disk"></i> Simpan</button> <button class="btn btn-danger" type="button" id="back"><i class="glyphicon glyphicon-remove"></i> Batal</button>
 				                </div>
-        </div>
+          </div>
         
         </div>
         </div>
@@ -148,13 +159,14 @@
 
 		 <script type="text/javascript">
       $('#btn-add').click(function(){
-        $('#frm-list').toggle();
-        $('#frm-add').fadeIn('slow');
-        $('.add-edit').attr('action',"<?php echo base_url()?>nilai/tambah_data");
-        $('#d_id_nilai').val('');
+    $('#frm-list').toggle();
+    $('#frm-add').fadeIn('slow');
+    $('.add-edit').attr('action',"<?php echo base_url()?>nilai/tambah_data");
+    $('#d_id_nilai').val('');
 		$('#d_keterangan').val('');
 		$('#d_mata_pelajaran').val('');
 		$('#d_nik').val('');
+    $('#d_kelas').val('');
 		$('#d_tanggal').val('');	
       });
 	  
@@ -167,12 +179,13 @@
 
 <script>
 
-	      function edit_data(id_nilai,id_mata_pelajaran,nik,tanggal,keterangan)
+	      function edit_data(id_nilai,id_mata_pelajaran,nik,id_kelas,tanggal,keterangan)
       {
        $('#judul').html("Edit Nilai");
 	   $('#d_id_nilai').val(id_nilai);
 	   $('#d_mata_pelajaran').val(id_mata_pelajaran);
 	   $('#d_nik').val(nik);
+     $('#d_kelas').val(id_kelas);
      $('#d_tanggal').val(tanggal);
      $('#d_keterangan').val(keterangan)
      $('.add-edit').attr('action',"<?php echo base_url()?>nilai/edit");

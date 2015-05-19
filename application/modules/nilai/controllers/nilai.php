@@ -33,6 +33,14 @@
 				$data['dt_nik']=$p;
 		
 
+		$kelas=$this->M_nilai->dropdownkelas();
+				foreach($kelas as $kelaskelas)
+				{
+					$u[$kelaskelas->id_kelas]=$kelaskelas->tingkat_kelas." ".$kelaskelas->jurusan." ".$kelaskelas->grup_kelas;
+				}
+				$data['dt_kelas']=$u;
+				
+
 		$data['list']=$this->M_nilai->tampil_data();
 		$this->load->view('v_nilai', $data);
 	}
@@ -45,6 +53,7 @@
 		
 		'id_nilai' 			=>$this->input->post ('id_nilai'),
 		'id_mata_pelajaran'	=>$this->input->post ('id_mata_pelajaran'),
+		'id_kelas'			=>$this->input->post ('id_kelas'),
 		'tanggal'			=>$this->input->post ('tanggal'),
 		'keterangan'		=>$this->input->post ('keterangan'),
 		'nik'				=>$this->input->post ('nik')
@@ -70,6 +79,7 @@
 
 		'id_nilai'			 		=>$this->input->post ('id_nilai'),
 		'id_mata_pelajaran'			=>$this->input->post ('id_mata_pelajaran'),
+		'id_kelas'					=>$this->input->post ('id_kelas'),
 		'tanggal'					=>$this->input->post ('tanggal'),
 		'keterangan'				=>$this->input->post ('keterangan'),
 		'nik'						=>$this->input->post ('nik')
