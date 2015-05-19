@@ -34,12 +34,14 @@ class Absensi extends CI_Controller {
 			$id_absensi=$this->db->insert_id();
 			$siswa=$this->m_absensi->getSiswa($jadwal->id_kelas);
 			//echo $jadwal->id_kelas;
-			foreach($siswa as $siswa){
-				$dtl=array('nis'=>$siswa->nis,
-							'absensi'=>'3',
-							'id_absensi'=>$id_absensi);
-				$this->db->insert('absensi_dtl', $dtl);
-			} 
+			if($siswa){	
+				foreach($siswa as $siswa){
+					$dtl=array('nis'=>$siswa->nis,
+								'absensi'=>'3',
+								'id_absensi'=>$id_absensi);
+					$this->db->insert('absensi_dtl', $dtl);
+				} 
+			}
 		}//echo "asdw";
 		$this->m_absensi->del();
 		$getIdAbsensi=$this->m_absensi->getIdAbsensi($jadwal_dtl,$date);
