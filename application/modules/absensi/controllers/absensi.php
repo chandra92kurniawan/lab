@@ -105,7 +105,10 @@ class Absensi extends CI_Controller {
 		echo "July 1, 2000 is on a " . date("D", mktime(0, 0, 0, 2, 1, 2015));
 
 	}
-
+	function cobian()
+	{
+		echo date('D');
+	}
 }
 
 /* End of file absensi.php */
