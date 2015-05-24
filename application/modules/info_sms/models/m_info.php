@@ -1,5 +1,5 @@
  <?php
-class M_nilai extends CI_Model {
+class M_info extends CI_Model {
 
 	function __construct()
 	{

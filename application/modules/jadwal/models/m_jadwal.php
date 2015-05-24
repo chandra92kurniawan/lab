@@ -56,6 +56,7 @@ class M_jadwal extends CI_Model
 		$hasil = $this->db->query($qry)->result();
 		return $hasil;
 	}
+	
 	function getHead($x)
 	{
 		$qry = "SELECT	*

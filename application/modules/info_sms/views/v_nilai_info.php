@@ -33,7 +33,7 @@
 		
 		<th>Mata Pelajaran</th>
 		<th>Nama Guru</th>
-    	<th>Kelas</th>
+    	<th>Status</th>
 		<th>Opsi</th>
 		
 
@@ -44,12 +44,12 @@
 						<?php foreach($list as $data){?>
 <tr>						 
                           
-              <td><?php echo $this->M_nilai->getnamapelajaran($data->id_mata_pelajaran);?></td>
-			  <td><?php echo $this->M_nilai->getnamaguru($data->nik);?></td>
-			  <td><?php echo $this->M_nilai->getnamakelas($data->id_kelas);?></td>
+              <td><?php echo $this->M_info->getnamapelajaran($data->id_mata_pelajaran);?></td>
+			        <td><?php echo $this->M_info->getnamaguru($data->nik);?></td>
+			        <td><?php echo $this->M_info->getnamakelas($data->id_kelas);?></td>
                                       
               <td>
-							  <a href="<?php echo base_url()?>nilai/detail/<?php echo $data->id_kelas;?>/<?php echo $data->id_mata_pelajaran;?>"  class="btn btn-success btn-xs"><i class="glyphicon glyphicon-list-alt")> </i> Isi Nilai</a>
+							  <a href="<?php echo base_url()?>info_sms/detail/<?php echo $data->id_kelas;?>/<?php echo $data->id_mata_pelajaran;?>"  class="btn btn-success btn-xs"><i class="glyphicon glyphicon-list-alt")> </i> Lihat Status</a>
               </td>
 </tr>
                         <?php }?>

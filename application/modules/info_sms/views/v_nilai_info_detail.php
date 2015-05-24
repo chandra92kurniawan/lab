@@ -35,7 +35,7 @@
                         <tr>
                           <th>NIS</th>
                           <th>Nama Siswa</th>
-                          <th>Nilai</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -43,9 +43,7 @@
                         <tr>
                           <td><?php echo $data->nis;?></td>
                           <td><?php echo $data->nama_siswa;?></td>
-                          <td>
-                              <input type="number" class="validate[required] form-control" name="nilai_<?php echo $data->nis;?>">
-                          </td>
+                          <td><?php echo $data->ID_outbox ?></td>
                         </tr>
                         <?php } ?>
                       </tbody>
@@ -53,41 +51,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4">
-                <div class="box ">
-                  <header class="dark">
-                    <div class="icons">
-                      <i class="fa fa-table"></i>
-                    </div>
-                    <h5>Keterangan</h5>
+            
+                 
 
-                    <!-- .toolbar -->
-                    <div class="toolbar">
-                      <nav style="padding: 8px;">
-                        <!--<a href="javascript:;" class="btn btn-default btn-xs collapse-box">
-                          <i class="fa fa-minus"></i>
-                        </a> 
-                        <a href="javascript:;" class="btn btn-default btn-xs full-box">
-                          <i class="fa fa-expand"></i>
-                        </a> 
-                        <a href="javascript:;" class="btn btn-danger btn-xs close-box">
-                          <i class="fa fa-times"></i>
-                        </a>  
-                        <a href="#" id="btn-add" class="btn btn-success btn-xs">
-                          <i class="fa fa-plus"></i> Tambah
-                        </a>-->
-                      </nav>
-                    </div><!-- /.toolbar -->
-                  </header>
-
-                 <div class="form-group">
-                        <label for="exampleInputEmail1">Materi Pembelajaran</label>
-        <textarea name="materi" class="validate[required] form-control" placeholder="Materi Pembelajaran"><?php //if($ket){echo $ket->keterangan;}?></textarea>
-                 </div>
-
-                  <div class="body">
-                      <button type="submit" class="btn btn-primary">Kirim</button>
-                  </div>
+                  
                 </div>
               </div>
             </form>

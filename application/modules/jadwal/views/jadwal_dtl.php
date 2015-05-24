@@ -1,6 +1,3 @@
-
-
-
 <?php $this->load->view('top');?>
 			<div class="row" id="frm-list">
               <div class="col-lg-12">
