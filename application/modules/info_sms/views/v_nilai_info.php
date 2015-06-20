@@ -33,7 +33,8 @@
 		
 		<th>Mata Pelajaran</th>
 		<th>Nama Guru</th>
-    	<th>Status</th>
+    	<th>Kelas</th>
+      <th>Keterangan</th>
 		<th>Opsi</th>
 		
 
@@ -44,12 +45,13 @@
 						<?php foreach($list as $data){?>
 <tr>						 
                           
-              <td><?php echo $this->M_info->getnamapelajaran($data->id_mata_pelajaran);?></td>
-			        <td><?php echo $this->M_info->getnamaguru($data->nik);?></td>
-			        <td><?php echo $this->M_info->getnamakelas($data->id_kelas);?></td>
+              <td><?php echo $data->nama_pelajaran;?></td>
+			        <td><?php echo $data->nama_guru;?></td>
+			        <td><?php echo $data->id_kelas;?></td>
+              <td><?php echo $data->keterangan;?></td>
                                       
               <td>
-							  <a href="<?php echo base_url()?>info_sms/detail/<?php echo $data->id_kelas;?>/<?php echo $data->id_mata_pelajaran;?>"  class="btn btn-success btn-xs"><i class="glyphicon glyphicon-list-alt")> </i> Lihat Status</a>
+							  <a href="<?php echo base_url()?>info_sms/detail/<?php echo $data->id_kelas;?>/<?php echo $data->id_mata_pelajaran;?>/<?php echo $data->id_nilai;?>"  class="btn btn-success btn-xs"><i class="glyphicon glyphicon-list-alt")> </i> Lihat Status</a>
               </td>
 </tr>
                         <?php }?>
@@ -78,63 +80,7 @@
                     </div><!-- /.toolbar -->
                   </header>
 					
-					
-			<div class="body">
-                    <form onsubmit="return byForm()" class="form-horizontal add-edit" action="<?php echo base_url()?>menu/add" method="POST" id="popup-validation">
-        	
-
-          <div class="form-group" style="display:none">
-                        <label class="col-sm-2 control-label">ID Nilai</label>
-                        <div class="col-sm-5">
-					 		      <input type="text" id="d_id_nilai" name="id_nilai">
-                        </div>
-				  </div>        
 				
-          <div class="form-group">
-                        <label class="col-sm-2 control-label">Mata Pelajaran</label>
-                        <div class="col-sm-5">
-						      	<?php echo form_dropdown('id_mata_pelajaran',$dt_pelajaran,'',"class='form-control' id='d_mata_pelajaran'"); ?>
-                       </div>
-					</div>	             
-					
-					<div class="form-group">
-                        <label class="col-sm-2 control-label">Nama Guru</label>
-                        <div class="col-sm-5">
-							       <?php echo form_dropdown('nik',$dt_nik,'',"class='form-control' id='d_nik'"); ?>
-                        </div>
-          </div>
-					
-          <div class="form-group">
-                        <label class="col-sm-2 control-label">Kelas</label>
-                        <div class="col-sm-5">
-                     <?php echo form_dropdown('id_kelas',$dt_kelas,'',"class='form-control' id='d_kelas'"); ?>
-                        </div>
-          </div>
-
-
-					<div class="form-group">
-                        <label class="col-sm-2 control-label">Tanggal</label>
-                        <div class="col-sm-5">
-							       <input type="date" class="form-control" name="tanggal" id="d_tanggal"> 
-                        </div>
-          </div>
-
-          <div class="form-group">
-                        <label class="col-sm-2 control-label">Keterangan</label>
-                        <div class="col-sm-5">
-                    <textarea name="keterangan" id="d_keterangan" class="form-control"></textarea>
-                        </div>
-           </div>
-					
-					
-				   <div class="form-group">
-					               <label class="col-sm-2 control-label"></label>
-					               <div class="col-sm-5">
-					           <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-disk"></i> Simpan</button> <button class="btn btn-danger" type="button" id="back"><i class="glyphicon glyphicon-remove"></i> Batal</button>
-				                </div>
-          </div>
-        
-        </div>
         </div>
       </form>
       </div>

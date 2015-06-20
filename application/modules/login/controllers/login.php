@@ -36,11 +36,11 @@ class Login extends CI_Controller {
 				redirect('dashboard');
 			}else{
 				$this->session->set_flashdata('msg', "<div class='alert alert-danger fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Password Anda salah</strong> .</div>");		
-				redirect("login");
+				redirect("home");
 			}
 		}else{
 			$this->session->set_flashdata('msg', "<div class='alert alert-danger fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Username belum terdaftar</strong> .</div>");		
-			redirect("login");
+			redirect("home");
 		}
 	}
 	function test()

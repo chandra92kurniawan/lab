@@ -23,14 +23,15 @@
                         <a href="javascript:;" class="btn btn-danger btn-xs close-box">
                           <i class="fa fa-times"></i>
                         </a>  
-                        <a href="#" id="btn-add" class="btn btn-success btn-xs">
-                          <i class="fa fa-plus"></i> Tambah
-                        </a>-->
+                        -->
+                        <a href="<?php echo base_url()?>info_sms/index/" id="back" class="btn btn-success btn-xs">
+                          <i class="glyphicon glyphicon-book"></i> Back
+                        </a>
                       </nav>
                     </div><!-- /.toolbar -->
                   </header>
                   <div class="body">
-                    <table  class="table table-bordered table-condensed table-hover table-striped">
+                    <table  class="dt_table table table-bordered table-condensed table-hover table-striped">
                       <thead>
                         <tr>
                           <th>NIS</th>
@@ -43,7 +44,7 @@
                         <tr>
                           <td><?php echo $data->nis;?></td>
                           <td><?php echo $data->nama_siswa;?></td>
-                          <td><?php echo $data->ID_outbox ?></td>
+                          <td><?php if(!empty($data->Status)){ echo $data->Status;}else{echo "<button type='button' class='btn btn-warning'> Kirim Ulang </button>";} ?></td>
                         </tr>
                         <?php } ?>
                       </tbody>
@@ -51,12 +52,15 @@
                   </div>
                 </div>
               </div>
-            
-                 
+
 
                   
                 </div>
               </div>
             </form>
             </div>
+
+
+
+
 <?php $this->load->view('footer');?>

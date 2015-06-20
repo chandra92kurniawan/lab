@@ -61,12 +61,23 @@ class M_info extends CI_Model {
 	function tampil_data()
 	{
 		if($this->session->userdata('id_role')==3){
-			$this->db->where('nik', $this->session->userdata('username'));
+			$this->db->where('nilai.nik', $this->session->userdata('username'));
 		}
-		$this->db->join('kelas', 'kelas.id_kelas = jadwal.id_kelas');
-		$this->db->join('mata_pelajaran', 'mata_pelajaran.id_mata_pelajaran = jadwal.id_mata_pelajaran');
-		return $this->db->get('jadwal')->result();
+		$this->db->join('kelas', 'kelas.id_kelas = nilai.id_kelas');
+		$this->db->join('mata_pelajaran', 'mata_pelajaran.id_mata_pelajaran = nilai.id_mata_pelajaran');
+		$this->db->join('guru', 'guru.nik = nilai.nik');
+		return $this->db->get('nilai')->result();
 		
+	}
+
+
+	function getketerangan($id)
+	{
+
+		//$this->db->select('kelas');
+		$this->db->where('id_nilai',$id);
+		$ab=$this->db->get('nilai')->row();
+		return $ab;
 	}
 
 	function getSiswa($id_kelas)
@@ -77,9 +88,10 @@ class M_info extends CI_Model {
 	}
 	function tampil_data_detail($id_kelas)
 	{		
-
-			$this->db->where('id_kelas',$id_kelas);
-			return $this->db->get("siswa")->result();
+			$this->db->join('siswa', 'siswa.nis = nilai_dtl.nis');
+			$this->db->join('sentitems', 'sentitems.ID = nilai_dtl.ID_sentitems', 'left');
+			$this->db->where('id_nilai',$id_kelas);
+			return $this->db->get("nilai_dtl")->result();
 			
 	}
 	

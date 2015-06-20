@@ -44,13 +44,13 @@
                 <a href="#top">Home</a>
             </li>
             <li>
-                <a href="#about">Personal Message</a>
+                <a href="#about">Login</a>
             </li>
             <li>
-                <a href="#services">Absensi</a>
+                <a href="#services">Tentang</a>
             </li>
             <li>
-                <a href="#portfolio">Nilai</a>
+                <a href="#portfolio"></a>
             </li>
             <li>
                 <a href="#contact">Contact</a>
@@ -76,39 +76,18 @@
         <div  class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Personal Message</h2><hr class="large">
-                    <form class="form-horizontal" method="POST" action="#about">
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Orang tua dari</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Masukan NIS atau Nama Siswa">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Nama Orang tua</label>
-                            <div class="col-sm-10">
-                                <input type="email" readonly="" class="form-control" id="inputEmail3" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">No Handphone</label>
-                            <div class="col-sm-10">
-                                <input type="email" readonly="" class="form-control" id="inputEmail3" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Isi Pesan</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" placeholder="Isi Pesan"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-success btn-lg"><i class="glyphicon glyphicon-send"></i> Simpan</button> <button class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove"></i> Batal</button>
-                            </div>
-                        </div>
-                    </form>
+                    <h2>LOGIN</h2><hr class="large">
+             <div id="login" class="tab-pane active">
+          <form action="<?php echo base_url()?>login/do_login" method="POST" class="form-signin">
+            <p class="text-muted text-center">
+              Enter your username and password<br>
+              <?php echo $this->session->flashdata('msg');?>
+            </p>
+            <input type="text" name="username" placeholder="admin"  class="form-control">
+            <input type="password" name="password" placeholder="admin" class="form-control">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          </form>
+        </div>
                 </div>
             </div>
             <!-- /.row -->
@@ -132,7 +111,7 @@
                                 <i class="fa fa-cloud fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong> Name</strong>
                                 </h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <a href="#" class="btn btn-light">Learn More</a>
@@ -200,64 +179,11 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <form class="form-horizontal">
-						<div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Orang tua dari</label>
-                            <div class="col-sm-10">
-								<select class="form-control" name="nama">
-								<option>------Pilih Kelas-----</option>
-								</select>
-                            </div>
-                        </div>
+					<H2>Bersama Dengan Kami, Anda Akan Mendapatkan Informasi Anak Anda Dengan Cepat Dan Efisien</H2>
+                    	
                         
 					</form>
-					<h2>Penilaian</h2>
-                    <hr class="small">
-                    <div class="row">
-					<div>
-					<table row="">
-					<tr>
-						<td>Kelas</td>
-						<td></td>
-							<td>
-							<select name="nama">
-							<option>------Pilih Kelas-----</option>
-							<?php
-								mysql_connect("localhost","root","root");
-								mysql_select_db("db_saungit");
-								$sql = mysql_query("SELECT * FROM indi_registrasi ORDER BY nama");
-								if(mysql_num_rows($sql)!=0){
-									while ($row = mysql_fetch_assoc($sql)) {
-										echo '<option>'.$row['nama'].'</option>';
-									}
-								}
-							?>
-						</select>
-						<td>
-					</tr>
-					
-					<tr>
-						<td>Grup<td>
-							<td></td>
-							<td>
-							<select name="nama">
-							<option>------Pilih Grup-----</option>
-							<?php
-								mysql_connect("localhost","root","root");
-								mysql_select_db("db_saungit");
-								$sql = mysql_query("SELECT * FROM indi_registrasi ORDER BY nama");
-								if(mysql_num_rows($sql)!=0){
-									while ($row = mysql_fetch_assoc($sql)) {
-										echo '<option>'.$row['nama'].'</option>';
-									}
-								}
-							?>
-						</select>
-						<td>
-					</tr>
-					</table>
-					</div>
-                        
-                        <div class="col-md-6">
+					    <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
                                     <script img class="img-portfolio img-responsive"  src="<?php echo base_url()?>start/img/portfolio-1.jpg"> </script>

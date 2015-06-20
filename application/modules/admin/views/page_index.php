@@ -6,7 +6,7 @@
                     <div class="icons">
                       <i class="fa fa-table"></i>
                     </div>
-                    <h5>Staff Administrasi</h5>
+                    <h5>Staff Administrator</h5>
 
                     <!-- .toolbar -->
                     <div class="toolbar">

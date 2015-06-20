@@ -24,11 +24,11 @@
 
 
 	
-	function detail($id_kelas,$id_mata_pelajaran)
+	function detail($id_kelas,$id_mata_pelajaran,$id_nilai)
 	{
 		$data['id_kelas']=$id_kelas;
 		$data['id_mata_pelajaran']=$id_mata_pelajaran;
-		$data['list']=$this->M_info->tampil_data_detail($id_kelas);
+		$data['list']=$this->M_info->tampil_data_detail($id_nilai);
 		$this->load->view('v_nilai_info_detail', $data);
 	}	
 	

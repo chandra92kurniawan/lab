@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_guru extends CI_Model {
+	
 	function getList()
 	{
 		$this->db->order_by('nama_guru', 'asc');

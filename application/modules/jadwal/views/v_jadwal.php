@@ -44,7 +44,7 @@
 			<tbody>
 						<?php foreach($list as $data){?>
                         <tr>						 
-                          <td><?php echo $data->tingkat_kelas;?>-<?php echo $data->jurusan;?> - <?php echo $data->grup_kelas;?></td>
+              <td><?php echo $data->tingkat_kelas;?>-<?php echo $data->jurusan;?> - <?php echo $data->grup_kelas;?></td>
 						  <td><?php echo $this->M_jadwal->getnamaguru($data->nik);?></td>
 						  <td><?php echo $this->M_jadwal->getnamapelajaran($data->id_mata_pelajaran);?></td>
                           
