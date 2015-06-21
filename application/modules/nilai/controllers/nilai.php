@@ -1,5 +1,5 @@
  <?php 
- class Nilai extends CI_Controller
+  class Nilai extends CI_Controller
  {
 	public function __construct()
 		{

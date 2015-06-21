@@ -1,4 +1,4 @@
-<?php $this->load->view('top');?>
+ <?php $this->load->view('top');?>
          <div class="row" id="frm-list">
          <form role='form' method="POST" action="<?php echo base_url()?>nilai/insert_nilai">
               <input type="hidden" name="id_kelas" value="<?php echo $id_kelas;?>">

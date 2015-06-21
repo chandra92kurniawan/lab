@@ -1,4 +1,4 @@
- <?php
+  <?php
 class M_nilai extends CI_Model {
 
 	function __construct()
