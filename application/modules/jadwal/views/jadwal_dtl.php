@@ -176,7 +176,7 @@
 				
 	  <div class="form-group">              
                   <div class="col-sm-5">
-							<input type="text"  id="d_id_jadwal" name="id_jadwal" value='<?php echo $this->uri->segment(3);?>' >
+							<input type="hidden"  id="d_id_jadwal" name="id_jadwal" value='<?php echo $this->uri->segment(3);?>' >
                         </div>
 				 </div>       
 						 

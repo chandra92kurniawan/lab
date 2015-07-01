@@ -9,7 +9,7 @@
                     <div class="icons">
                       <i class="fa fa-table"></i>
                     </div>
-                    <h5>Penilaian Harian</h5>
+                    <h5>Info Status</h5>
 
                     <!-- .toolbar -->
                     <div class="toolbar">

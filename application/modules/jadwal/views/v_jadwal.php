@@ -6,7 +6,7 @@
                     <div class="icons">
                       <i class="fa fa-table"></i>
                     </div>
-                    <h5>Guru</h5>
+                    <h5>Jadwal</h5>
 
                     <!-- .toolbar -->
                     <div class="toolbar">
@@ -76,7 +76,7 @@
                     <div class="icons">
                       <i class="fa fa-table"></i>  
                     </div>
-                    <h5 id="judul">Tambah Program</h5>
+                    <h5 id="judul">Tambah Jadwal</h5>
 
                     <!-- .toolbar -->
                     <div class="toolbar">

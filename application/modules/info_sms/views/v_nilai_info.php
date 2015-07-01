@@ -6,7 +6,7 @@
                     <div class="icons">
                       <i class="fa fa-table"></i>
                     </div>
-                    <h5>Penilaian</h5>
+                    <h5>Info Sms</h5>
 
                     <!-- .toolbar -->
                     <div class="toolbar">

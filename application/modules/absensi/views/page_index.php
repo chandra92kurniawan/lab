@@ -6,7 +6,7 @@
                     <div class="icons">
                       <i class="fa fa-table"></i>
                     </div>
-                    <h5>Absensi</h5>
+                    <h5>Presensi</h5>
 
                     <!-- .toolbar -->
                     <div class="toolbar">

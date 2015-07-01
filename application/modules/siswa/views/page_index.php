@@ -6,7 +6,7 @@
                     <div class="icons">
                       <i class="fa fa-table"></i>
                     </div>
-                    <h5>Kelas</h5>
+                    <h5>Siswa</h5>
 
                     <!-- .toolbar -->
                     <div class="toolbar">

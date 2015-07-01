@@ -6,7 +6,7 @@
                     <div class="icons">
                       <i class="fa fa-table"></i>
                     </div>
-                    <h5>Diskon</h5>
+                    <h5>Mata Pelajaran</h5>
 
                     <!-- .toolbar -->
                     <div class="toolbar">
