@@ -100,6 +100,18 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label class="col-sm-2 control-label">Password baru</label>
+                        <div class="col-sm-5">
+                          <input type="password" id="password" name="password" class="form-control validate[required]">
+                        </div> 
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label">Ulangi Password</label>
+                        <div class="col-sm-5">
+                          <input type="password" id="password1" name="password1" class="form-control validate[required]">
+                        </div> 
+                      </div>
+                      <div class="form-group">
                         <label class="col-sm-2 control-label">Nama Orang Tua</label>
                         <div class="col-sm-5">
                           <input type="text" name="nama_orang_tua" value="<?php echo $siswa->nama_orang_tua;?>" class="form-control validate[required]">
@@ -254,6 +266,19 @@
         }]
     });
 });
+</script>
+<script type="text/javascript">
+    function byForm()
+    {
+        var pass1=$('#password').val();
+        var pass2=$('#password1').val();
+        if(pass1==pass2){
+            return true;
+        }else{
+            alert("Ulangi password, password tidak cocok");
+            return false;
+        }
+    }
 </script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/highchart/highchart.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/highchart/exporting.js"></script>
