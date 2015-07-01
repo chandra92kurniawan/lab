@@ -134,6 +134,7 @@
                           <input type="text" name="nama_siswa" id="nama_siswa" class="form-control validate[required]">
                         </div> 
                       </div>
+                      
                       <div class="form-group">
                         <label class="col-sm-2 control-label">Kelas</label>
                         <div class="col-sm-5">
@@ -147,6 +148,7 @@
                                 echo form_dropdown('jk', $jk, '',"class='form-control validate[required]' id='jk'");?>
                         </div>
                       </div>
+                      <div class="pageInsert" style="display:none">
                       <div class="form-group">
                         <label class="col-sm-2 control-label"></label>
                         <div class="col-sm-5">
@@ -170,6 +172,7 @@
                         <div class="col-sm-5">
                           <textarea type="text" name="alamat" id="alamat" class="form-control validate[required]"></textarea>
                         </div> 
+                      </div>
                       </div>
                       <div class="form-group">
                         <label class="col-sm-2 control-label"></label>
@@ -195,6 +198,7 @@
         $('#alamat').val('');
         $('#kelas').val('');
         $('#cek').val('0');
+        $('.pageInsert').hide();
         $('#nis').removeAttr('readonly');
         $('#judul').html("Tambah Siswa");
       });
@@ -216,7 +220,7 @@
         $('#cek').val('1');
         $('.add-edit').attr('action',"<?php echo base_url()?>siswa/edit");
         $('#frm-list').toggle();
-       
+        $('.pageInsert').show();
         $('#frm-add').fadeIn('slow');
       } 
       function cekd()

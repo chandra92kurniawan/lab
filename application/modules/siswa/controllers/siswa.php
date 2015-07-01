@@ -6,6 +6,8 @@ class Siswa extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_siswa');
 		$st=$this->session->userdata('login');
+		$this->load->helper('security');
+		$this->load->helper('string');
 		if($st!=true)
 		{
 			redirect('home');
@@ -34,12 +36,26 @@ class Siswa extends CI_Controller {
 		$data=array('nis'=>$this->input->post('nis'),
 					'nama_siswa'=>$this->input->post('nama_siswa'),
 					'jenis_kelamin'=>$this->input->post('jk'),
-					'id_kelas'=>$this->input->post('kelas'),
+					'id_kelas'=>$this->input->post('kelas')/*,
 					'nama_orang_tua'=>$this->input->post('nama_orang_tua'),
 					'no_orang_tua'=>$this->input->post('nomor_hp'),
 					'alamat'=>$this->input->post('alamat'),
-					'status'=>'1');
+					'status'=>'1'*/);
 		$this->db->insert('siswa', $data);
+		
+		$user=$this->input->post('nis');
+		$salt= random_string('alnum', 5);
+		$pass= $salt;		
+		$satu=do_hash($salt);
+		$p2=do_hash($pass,'md5');
+		$pass=$satu.".".$p2;
+		$dat=array("username"=>$user,
+					"nama_user"=>$this->input->post('nama_siswa'),
+					"password"=>$pass,
+					"status"=>1,
+					"salt"=>$salt,
+					"id_role"=>4);
+		$this->db->insert('user', $dat);
 		$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Siswa baru berhasil ditambahkan</strong> .</div>");
 		redirect("siswa");
 	}

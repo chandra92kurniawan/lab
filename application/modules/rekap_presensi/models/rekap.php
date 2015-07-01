@@ -1,7 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Rekap extends CI_Model {
-
+	function getJmlMasuk($id_absensi)
+	{
+		$this->db->where('id_absensi', $id_absensi);
+		$this->db->where('absensi', '1');
+		return $this->db->get('absensi_dtl')->num_rows();
+	}
 	function getJadwal()
 	{
 		$this->db->join('mata_pelajaran', 'mata_pelajaran.id_mata_pelajaran=jadwal.id_mata_pelajaran');
