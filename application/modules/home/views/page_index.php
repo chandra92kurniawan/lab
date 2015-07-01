@@ -47,10 +47,10 @@
                 <a href="#about">Login</a>
             </li>
             <li>
-                <a href="#services">Tentang</a>
+                <a href="#services"></a>
             </li>
             <li>
-                <a href="#portfolio"></a>
+                <a href="#portfolio">Tentang</a>
             </li>
             <li>
                 <a href="#contact">Contact</a>
@@ -74,8 +74,9 @@
 	
     <section  style="min-height:800px;background:#f39c12;" id="about" class="about">
         <div  class="container">
+       
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-10 text-center">
                     <h2>LOGIN</h2><hr class="large">
              <div id="login" class="tab-pane active">
           <form action="<?php echo base_url()?>login/do_login" method="POST" class="form-signin">
@@ -90,6 +91,7 @@
         </div>
                 </div>
             </div>
+        
             <!-- /.row -->
         </div>
         <!-- /.container -->
@@ -253,10 +255,10 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4><strong>SMS Gateway</strong>
                     </h4>
-                    <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                    <p>Dilan Deswara<br> Jl Raya Banjaran </p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-phone fa-fw"></i>089-60281-7721</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">alldeswara@gmail.com</a>
                         </li>
                     </ul>
                     <br>
@@ -272,7 +274,7 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="text-muted">Copyright &copy; SMAKP2Bandung</p>
                 </div>
             </div>
         </div>

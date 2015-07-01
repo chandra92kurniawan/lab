@@ -45,6 +45,7 @@
                           <td><?php echo $list->nama_pelajaran;?></td>
                           <td>
                             <a href="<?php echo base_url()?>rekap_presensi/rekap/<?php echo $list->id_jadwal;?>" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-calendar"></i> Rekap</a>
+                            <a href="<?php echo base_url()?>rekap_presensi/rekap/<?php echo $list->id_jadwal;?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i> Update</a>
                           </td>
                         </tr>
                         <?php }?>

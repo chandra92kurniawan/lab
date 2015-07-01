@@ -61,7 +61,7 @@ class M_nilai extends CI_Model {
 	function tampil_data()
 	{
 		if($this->session->userdata('id_role')==3){
-			$this->db->where('nik', $this->session->userdata('username'));
+			$this->db->where('nik', $this->session->userdata('1'));
 		}
 		$this->db->join('kelas', 'kelas.id_kelas = jadwal.id_kelas');
 		$this->db->join('mata_pelajaran', 'mata_pelajaran.id_mata_pelajaran = jadwal.id_mata_pelajaran');
