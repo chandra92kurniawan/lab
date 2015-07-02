@@ -23,7 +23,7 @@
                         <a href="<?php echo base_url()?>rekap_presensi" id="" class="btn btn-danger btn-xs">
                            Kembali
                         </a> 
-                        <a href="#" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-print"></i> Cetak</a>
+                        <a href="<?php echo base_url()?>rekap_presensi/toPdf/<?php echo $id_jadwal;?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-print"></i> Cetak</a>
                       </nav>
                     </div><!-- /.toolbar -->
                   </header>

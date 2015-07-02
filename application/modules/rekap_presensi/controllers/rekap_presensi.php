@@ -16,6 +16,7 @@ class Rekap_presensi extends CI_Controller {
 	}
 	function rekap($id_jadwal)
 	{
+		$data['id_jadwal']=$id_jadwal;
 		$data['list']=$this->getData($id_jadwal);
 		$data['absen']=$this->rekap->getAbsen($id_jadwal);
 		$data['siswa']=$this->rekap->jadwal($id_jadwal);
