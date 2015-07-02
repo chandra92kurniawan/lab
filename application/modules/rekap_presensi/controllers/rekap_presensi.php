@@ -43,6 +43,7 @@ class Rekap_presensi extends CI_Controller {
 	      $col=0;foreach($absen as $a){
 	      	$pdf->Cell(10,10,++$col,'TB',0,'R');
 	      }$pdf->ln();
+	      $pdf -> setFont ('times','',16);
 	      foreach($siswa as $siswa){
 	      		$pdf->Cell(35,10,$siswa->nis,'TB',0,'L');
 	      		$pdf->Cell(80,10,$siswa->nama_siswa,'TB',0,'L');
