@@ -79,13 +79,13 @@
                 <div class="col-lg-10 text-center">
                     <h2>LOGIN</h2><hr class="large">
              <div id="login" class="tab-pane active">
-          <form action="<?php echo base_url()?>login/do_login" method="POST" class="form-signin">
+          <form action="<?php echo base_url()?>login/do_login" method="POST" class="form-signin form-horiontal">
             <p class="text-muted text-center">
               Enter your username and password<br>
               <?php echo $this->session->flashdata('msg');?>
             </p>
-            <input type="text" name="username" placeholder="admin"  class="form-control">
-            <input type="password" name="password" placeholder="admin" class="form-control">
+            <input type="text" name="username" placeholder="admin"  class="form-control"><br>
+            <input type="password" name="password" placeholder="admin" class="form-control"><br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
           </form>
         </div>

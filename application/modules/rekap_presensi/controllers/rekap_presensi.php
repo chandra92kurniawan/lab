@@ -152,15 +152,24 @@ class Rekap_presensi extends CI_Controller {
 			$absen=$this->input->post('id_'.$siswa->id_absensi_dtl);
 			$up=array('absensi'=>$absen);
 			$this->m_absensi->updateDtl($up,$siswa->id_absensi_dtl);
-			
+			$nmSiswa=explode(' ', $siswa->nama_siswa);
+			$nama_siswa='';
+			for($abc=0;$abc<=count($nmSiswa);$abc++){
+				if($abc==0){
+					$nama_siswa.=$nmSiswa[$abc];
+				}else{
+					$nama_siswa.=substr($nmSiswa[$abc], 1);
+				}
+				$nama_siswa.=" ";
+			}
 			if($absen==3){
-					$str="Pemberitahuan ! kepada orangtua dari ".$siswa->nama_siswa." pada hari ".$jadwal->hari_indonesia." Mata pelajaran ".$jadwal->nama_pelajaran." pada jam ".$jadwal->jam_awal." - ".$jadwal->jam_akhir." anak anda tidak masuk kelas dikarenakan Alpha (tanpa keterangan)";
+					$str="Pemberitahuan ! kepada orangtua dari ".$nama_siswa." pada hari ".$jadwal->hari_indonesia." Mata pelajaran ".$jadwal->nama_pelajaran." pada jam ".$jadwal->jam_awal." - ".$jadwal->jam_akhir." anak anda tidak masuk kelas dikarenakan Alpha (tanpa keterangan)";
 					$alpha=1;
 			}else if($absen==2){
-					$str="Pemberitahuan ! kepada orangtua dari ".$siswa->nama_siswa." pada hari ".$jadwal->hari_indonesia." Mata pelajaran ".$jadwal->nama_pelajaran." pada jam ".$jadwal->jam_awal." - ".$jadwal->jam_akhir." anak anda tidak masuk kelas dikarenakan Ijin";
+					$str="Pemberitahuan ! kepada orangtua dari ".$nama_siswa." pada hari ".$jadwal->hari_indonesia." Mata pelajaran ".$jadwal->nama_pelajaran." pada jam ".$jadwal->jam_awal." - ".$jadwal->jam_akhir." anak anda tidak masuk kelas dikarenakan Ijin";
 					$ijin=1;
 			}else{
-					$str="Pemberitahuan ! kepada orangtua dari ".$siswa->nama_siswa." pada hari ".$jadwal->hari_indonesia." Mata pelajaran ".$jadwal->nama_pelajaran." pada jam ".$jadwal->jam_awal." - ".$jadwal->jam_akhir." anak anda hadir pada kelas tersebut";
+					$str="Pemberitahuan ! kepada orangtua dari ".$nama_siswa." pada hari ".$jadwal->hari_indonesia." Mata pelajaran ".$jadwal->nama_pelajaran." pada jam ".$jadwal->jam_awal." - ".$jadwal->jam_akhir." anak anda hadir pada kelas tersebut";
 					$hadir=1;
 			}
 			if($kirim==1){

@@ -37,6 +37,15 @@ class Dashboard extends CI_Controller {
 		$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Data Berhasil diupdate</strong> .</div>");
 		redirect('dashboard');
 	}
+	function test()
+	{	$usd='';
+		exec("I:\TA\gammu133 -c I:\TA\gammu133 gammu getussd *123#", $hasil);
+		/*for ($i=0; $i<=count($hasil)-1; $i++)
+		{
+			if (substr_count($hasil[$i], 'Service reply') > 0) ;$usd = $i;
+		}
+		echo $hasil[$usd];*/
+	}
 }	
 
 /* End of file dashboard.php */
