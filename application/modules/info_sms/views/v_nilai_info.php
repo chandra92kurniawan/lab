@@ -1,4 +1,5 @@
  <?php $this->load->view('top');?>
+
       <div class="row" id="frm-list">
               <div class="col-lg-12">
                 <div class="box ">
@@ -47,7 +48,7 @@
                           
               <td><?php echo $data->nama_pelajaran;?></td>
 			        <td><?php echo $data->nama_guru;?></td>
-			        <td><?php echo $data->id_kelas;?></td>
+			        <td><?php echo $data->tingkat_kelas." ".$data->jurusan." ".$data->grup_kelas;?></td>
               <td><?php echo $data->keterangan;?></td>
                                       
               <td>

@@ -66,8 +66,7 @@ class M_info extends CI_Model {
 		$this->db->join('kelas', 'kelas.id_kelas = nilai.id_kelas');
 		$this->db->join('mata_pelajaran', 'mata_pelajaran.id_mata_pelajaran = nilai.id_mata_pelajaran');
 		$this->db->join('guru', 'guru.nik = nilai.nik');
-		return $this->db->get('nilai')->result();
-		
+		return $this->db->get('nilai')->result();		
 	}
 
 

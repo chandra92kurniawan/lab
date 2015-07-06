@@ -7,7 +7,12 @@ class M_nilai extends CI_Model {
 		$this->load->database();
 	}
 	
-		
+	function getPengajar($id_kelas,$id_mata_pelajaran)
+	{
+		$this->db->where('id_kelas', $id_kelas);
+		$this->db->where('id_mata_pelajaran', $id_mata_pelajaran);
+		return $this->db->get('jadwal')->row()->nik;
+	}	
 		function getnamapelajaran ($id)
 		{
 			$this->db->select('nama_pelajaran');
@@ -93,12 +98,14 @@ class M_nilai extends CI_Model {
 	function ambildata($id)
 	{
 
-		$query ="SELECT * from nilai
+		/*$query ="SELECT * from nilai
 						JOIN mata_pelajaran ON nilai.id_mata_pelajaran = mata_pelajaran.id_mata_pelajaran
 						
 						where mata_pelajaran.id_mata_pelajaran =".$id;
 		$hasil = $this->db->query($query)->row();
-		return $hasil;
+		return $hasil;*/
+		$this->db->where('id_mata_pelajaran', $id);
+		return $this->db->get('mata_pelajaran')->row();
 	}
 	
 

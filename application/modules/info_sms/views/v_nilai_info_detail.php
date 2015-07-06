@@ -1,4 +1,22 @@
 <?php $this->load->view('top');?>
+<!--<input type="text" id="dd" value="1">-->
+<script type="text/javascript">
+  function updated(id)
+  {
+      setInterval( function()
+      {
+          var va=$('#dd').val();
+          if(va==1){
+            $('#dd').val('2');
+          }else{
+            $('#dd').val('1');
+          }
+      }, 1000 )
+  };
+
+  //  Check for updates every 10 seconds
+  $( document ).ready( checkUpdates );
+</script>
          <div class="row" id="frm-list">
          <form role='form' method="POST" action="<?php echo base_url()?>nilai/insert_nilai">
               <input type="hidden" name="id_kelas" value="<?php echo $id_kelas;?>">
@@ -31,11 +49,13 @@
                     </div><!-- /.toolbar -->
                   </header>
                   <div class="body">
+                  <?php echo $this->session->flashdata('msg');?>
                     <table  class="dt_table table table-bordered table-condensed table-hover table-striped">
                       <thead>
                         <tr>
                           <th>NIS</th>
                           <th>Nama Siswa</th>
+                          <th>Nilai</th>
                           <th>Status</th>
                         </tr>
                       </thead>
@@ -44,7 +64,8 @@
                         <tr>
                           <td><?php echo $data->nis;?></td>
                           <td><?php echo $data->nama_siswa;?></td>
-                          <td><?php if(!empty($data->Status)){ echo $data->Status;}else{echo "<button type='button' class='btn btn-warning'> Kirim Ulang </button>";} ?></td>
+                          <td><?php echo $data->nilai;?></td>
+                          <td><?php if(!empty($data->ID)){ echo $data->Status;}else{?><a href='<?php echo base_url();?>"info_sms/reSend/<?php echo $data->ID_sentitems;?>/<?php echo $data->id_nilai_dtl;?>' class='btn btn-warning'> Kirim Ulang </a><?php } ?></td>
                         </tr>
                         <?php } ?>
                       </tbody>
@@ -59,7 +80,6 @@
               </div>
             </form>
             </div>
-
 
 
 
