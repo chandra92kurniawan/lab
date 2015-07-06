@@ -79,8 +79,9 @@
 	function insert_nilai(){
 		$id_kelas=$this->input->post('id_kelas');
 		$id_mata_pelajaran=$this->input->post('id_mata_pelajaran');
+		$nik=$this->M_nilai->getPengajar($id_kelas,$id_mata_pelajaran);
 		$data=array('id_mata_pelajaran'=>$id_mata_pelajaran,
-					'nik'=>$this->session->userdata('username'),
+					'nik'=>$nik,
 					'keterangan'=>$this->input->post('materi'),
 					'id_kelas'=>$id_kelas);
 		$this->db->insert('nilai', $data);
@@ -89,6 +90,8 @@
 		//insert siswa
 		$tgl=date('l, d-m-Y');
 		$siswa=$this->M_nilai->tampil_data_detail($id_kelas);
+		echo "<pre>";
+		//print_r($siswa);
 		if($siswa){
 			$arr=array();
 			foreach($siswa as $s){
@@ -108,10 +111,15 @@
 				$dt=array('nis'=>$s->nis,
 							'nilai'=>$this->input->post('nilai_'.$s->nis),
 							'id_nilai'=>$id_nilai,
+<<<<<<< HEAD
 							'ID_sentitems'=>$ID_sentitems);
+=======
+							'ID_sentitems'=>$id_outbox);
+>>>>>>> origin/master
 				array_push($arr, $dt);
+				//echo $s->nilai."<br>";
 			}
-
+			//print_r($arr);
 			$this->db->insert_batch('nilai_dtl', $arr);
 			
 		}
