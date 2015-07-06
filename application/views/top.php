@@ -1,7 +1,7 @@
 <html class="no-js">
   <head>
     <meta charset="UTF-8">
-    <title>Table</title>
+    <title>SMS Gateway SMA KP2 Bandung</title>
 
     <!--IE Compatibility modes-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,8 +40,10 @@
     <!--Modernizr 2.7.2-->
     <script src="<?php echo site_url()?>assets/lib/jquery/jquery.min.js"></script>
     <script src="<?php echo site_url()?>bootstrap/js/jquery-1.10.3.min.js"></script>
+    <link rel='icon' type='image/png' href='<?php echo base_url()?>upload/user/images.jpg'>
     <script src="<?php echo site_url()?>assets/lib/modernizr/modernizr.min.js"></script>
   </head>
+
   <body class="wide fullScreen">
     <div id="wrap">
       <div id="top">
@@ -68,19 +70,7 @@
                   <i class="glyphicon glyphicon-fullscreen"></i>
                 </a> 
               </div>
-              <div class="btn-group">
-                <a data-placement="bottom" data-original-title="E-mail" data-toggle="tooltip" class="btn btn-default btn-sm">
-                  <i class="fa fa-envelope"></i>
-                  <span class="label label-warning">5</span> 
-                </a> 
-                <a data-placement="bottom" data-original-title="Messages" href="#" data-toggle="tooltip" class="btn btn-default btn-sm">
-                  <i class="fa fa-comments"></i>
-                  <span class="label label-danger">4</span> 
-                </a> 
-                <a data-toggle="modal" data-original-title="Help" data-placement="bottom" class="btn btn-default btn-sm" href="#helpModal">
-                  <i class="fa fa-question"></i>
-                </a> 
-              </div>
+            
               <div class="btn-group">
                 <a href="<?php echo base_url()?>login/logout" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom" class="btn btn-metis-1 btn-sm">
                   <i class="fa fa-power-off"></i>
@@ -146,16 +136,16 @@
             <a class="user-link" href="">
               <!--<img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/user.gif">-->
               <img style="width:104;height:104" class="media-object img-thumbnail user-img" alt="User Picture" src="<?php echo base_url()?>upload/user/images.jpg">
-              <span class="label label-danger user-label">16</span> 
+              <span class="label labelhttps://www.youtube.com/watch?v=kvrdin0S5aM-danger user-label"></span> 
             </a> 
             <div class="media-body">
-              <h5 class="media-heading">Archie</h5>
+              <h5 class="media-heading"></h5>
               <ul class="list-unstyled user-info">
-                <li> <a href="">Administrator</a>  </li>
-                <li>Last Access :
+                <li> <a href=""></a>  </li>
+                <li>
                   <br>
                   <small>
-                    <i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small> 
+                    <i class=""></i>&nbsp;</small> 
                 </li>
               </ul>
             </div>

@@ -87,7 +87,7 @@
 		$id_nilai=$this->db->insert_id();
 
 		//insert siswa
-		
+		$tgl=date('l, d-m-Y');
 		$siswa=$this->M_nilai->tampil_data_detail($id_kelas);
 		if($siswa){
 			$arr=array();
@@ -98,17 +98,17 @@
 				
 					$pelajaran= $this->M_nilai->ambildata($id_mata_pelajaran);
 					
-					$isipesan="Pemberitahuan nilai harian dari siswa ".$s->nama_siswa." dengan Mata pelajaran ".$pelajaran->nama_pelajaran." mendapatkan nilai sebesar ".$this->input->post('nilai_'.$s->nis)." pada materi ".$this->input->post('materi')." ";
+					$isipesan="Nilai harian Mata Pelajaran ".$pelajaran->nama_pelajaran." untuk siswa dengan nama " .$s->nama_siswa." pada materi ".$this->input->post('materi')." adalah ".$this->input->post('nilai_'.$s->nis)." ";
 					
 					$data = array('DestinationNumber'=>$s->no_orang_tua,
 								'TextDecoded'=>$isipesan);
 							$this->db->insert('outbox', $data);
-							$id_outbox=$this->db->insert_id();		
+							$ID_sentitems=$this->db->insert_id();		
 				//print_r($data);
 				$dt=array('nis'=>$s->nis,
 							'nilai'=>$this->input->post('nilai_'.$s->nis),
 							'id_nilai'=>$id_nilai,
-							'ID_outbox'=>$id_outbox);
+							'ID_sentitems'=>$ID_sentitems);
 				array_push($arr, $dt);
 			}
 
@@ -122,31 +122,5 @@
 		
 		redirect('nilai/indexnilai');
 	}
-	function hapus($id){
-	$this->M_nilai->hapus($id);
-	//$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Data berhasil dihapus</strong> .</div>");
-	redirect('nilai/indexnilai');
-	}
-	
-
-	
-	function edit()
-	{
-		$data=array(
-
-		'id_nilai'			 		=>$this->input->post ('id_nilai'),
-		'id_mata_pelajaran'			=>$this->input->post ('id_mata_pelajaran'),
-		'id_kelas'					=>$this->input->post ('id_kelas'),
-		'tanggal'					=>$this->input->post ('tanggal'),
-		'keterangan'				=>$this->input->post ('keterangan'),
-		'nik'						=>$this->input->post ('nik')
-					);
-		$this->M_nilai->update($data,$this->input->post('id_nilai'));
-	//	$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Kelas berhasil diubah</strong> .</div>");
-		//print_r($data);		
-
-		redirect ("nilai/indexnilai");
-	}
-	
 	
 }

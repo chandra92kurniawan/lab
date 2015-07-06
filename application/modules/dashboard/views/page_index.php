@@ -12,19 +12,19 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="well well-small dark">
-		          <span>Default</span> <span class="pull-right"><small>20%</small> </span> 
+		          <span>Absensi</span> <span class="pull-right"><small>20%</small> </span> 
 		          <div class="progress xs">
 		            <div class="progress-bar progress-bar-info" style="width: 20%"></div>
 		          </div>
-		          <span>Success</span> <span class="pull-right"><small>40%</small> </span> 
+		          <span>Presensi</span> <span class="pull-right"><small>40%</small> </span> 
 		          <div class="progress xs">
 		            <div class="progress-bar progress-bar-success" style="width: 40%"></div>
 		          </div>
-		          <span>warning</span> <span class="pull-right"><small>60%</small> </span> 
+		          <span>Izin</span> <span class="pull-right"><small>60%</small> </span> 
 		          <div class="progress xs">
 		            <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
 		          </div>
-		          <span>Danger</span> <span class="pull-right"><small>80%</small> </span> 
+		          <span>Sakit</span> <span class="pull-right"><small>80%</small> </span> 
 		          <div class="progress xs">
 		            <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
 		          </div>
@@ -60,13 +60,13 @@
             type: 'spline'
         },
         title: {
-            text: 'Snow depth at Vikjafjellet, Norway'
+            text: 'SMS Absensi Siswa Tahun Ini'
         },
         subtitle: {
-            text: 'Irregular time data in Highcharts JS'
+            text: 'SMS Absensi Siswa Tahun Ini'
         },
         xAxis: {
-            type: 'datetime',
+            type: '',
             dateTimeLabelFormats: { // don't display the dummy year
                 month: '%e. %b',
                 year: '%b'
@@ -77,7 +77,7 @@
         },
         yAxis: {
             title: {
-                text: 'Snow depth (m)'
+                text: 'SMS Absensi Siswa Tahun Ini'
             },
             min: 0
         },
@@ -142,7 +142,7 @@
                 [Date.UTC(1971,  5,  7), 0   ]
             ]
         }, {
-            name: 'Winter 2009-2010',
+            name: 'A 2009-2010',
             data: [
                 [Date.UTC(1970,  9,  9), 0   ],
                 [Date.UTC(1970,  9, 14), 0.15],

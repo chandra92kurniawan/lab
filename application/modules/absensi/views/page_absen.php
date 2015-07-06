@@ -24,6 +24,10 @@
                         <a href="#" id="btn-add" class="btn btn-success btn-xs">
                           <i class="fa fa-plus"></i> Tambah
                         </a>-->
+
+                         <a href="<?php echo base_url()?>jadwal/index/" id="back" class="btn btn-success btn-xs">
+                          <i class="glyphicon glyphicon-book"></i> Back
+                        </a>
                       </nav>
                     </div><!-- /.toolbar -->
                   </header>

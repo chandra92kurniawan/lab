@@ -161,24 +161,24 @@
             type: 'spline'
         },
         title: {
-            text: 'Snow depth at Vikjafjellet, Norway'
+            text: 'Jumlah Pengiriman SMS Absensi Siswa'
         },
         subtitle: {
-            text: 'Irregular time data in Highcharts JS'
+            text: 'Jumlah Pengiriman SMS Absensi Siswa'
         },
         xAxis: {
-            type: 'datetime',
+            type: '',
             dateTimeLabelFormats: { // don't display the dummy year
                 month: '%e. %b',
                 year: '%b'
             },
             title: {
-                text: 'Date'
+                text: ''
             }
         },
         yAxis: {
             title: {
-                text: 'Snow depth (m)'
+                text: ''
             },
             min: 0
         },

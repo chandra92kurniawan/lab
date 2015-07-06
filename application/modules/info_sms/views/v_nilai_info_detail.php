@@ -44,7 +44,7 @@
                         <tr>
                           <td><?php echo $data->nis;?></td>
                           <td><?php echo $data->nama_siswa;?></td>
-                          <td><?php if(!empty($data->Status)){ echo $data->Status;}else{echo "<button type='button' class='btn btn-warning'> Kirim Ulang </button>";} ?></td>
+                          <td><?php if(!empty($data->Status)){ echo $data->Status;}else{echo "<a href='<?php echo base_url();?>info_sms/kirim_ulang/<?php echo $data->id_kelas;?>' type='button' class='btn btn-warning'> Kirim Ulang </a>";} ?></td>
                         </tr>
                         <?php } ?>
                       </tbody>

@@ -47,7 +47,7 @@
                           
               <td><?php echo $data->nama_pelajaran;?></td>
 			        <td><?php echo $data->nama_guru;?></td>
-			        <td><?php echo $data->id_kelas;?></td>
+			        <td><?php echo $data->tingkat_kelas;?>-<?php echo $data->jurusan;?> - <?php echo $data->grup_kelas;?></td>
               <td><?php echo $data->keterangan;?></td>
                                       
               <td>

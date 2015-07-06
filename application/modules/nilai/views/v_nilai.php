@@ -44,9 +44,9 @@
 						<?php foreach($list as $data){?>
 <tr>						 
                           
-              <td><?php echo $this->M_nilai->getnamapelajaran($data->id_mata_pelajaran);?></td>
-			  <td><?php echo $this->M_nilai->getnamaguru($data->nik);?></td>
-			  <td><?php echo $this->M_nilai->getnamakelas($data->id_kelas);?></td>
+         <td><?php echo $this->M_nilai->getnamapelajaran($data->id_mata_pelajaran);?></td>
+			   <td><?php echo $this->M_nilai->getnamaguru($data->nik);?></td>
+			   <td><?php echo $this->M_nilai->getnamakelas($data->id_kelas);?></td>
                                       
               <td>
 							  <a href="<?php echo base_url()?>nilai/detail/<?php echo $data->id_kelas;?>/<?php echo $data->id_mata_pelajaran;?>"  class="btn btn-success btn-xs"><i class="glyphicon glyphicon-list-alt")> </i> Isi Nilai</a>
