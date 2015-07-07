@@ -102,7 +102,7 @@ $(function () {
                 foreach($arr as $d=>$dd){
                     foreach($dd as $val=>$value){
                         if($val=='jumlah'){
-                            echo '"'.$value.'",';
+                            echo "'.$value.',";
                         }
                     }
                 }
