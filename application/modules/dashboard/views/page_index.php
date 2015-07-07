@@ -2,12 +2,12 @@
 <br>
 
 <div class="row">
-	<div class="col-md-9">
+	<div class="col-md-12">
 		<div id="container"></div>		
 	</div>
 	<!--<div class="col-md-1">
 		
-	</div>-->
+	</div>
 	<div class="col-md-3">
 		<div class="row">
 			<div class="col-md-12">
@@ -46,13 +46,13 @@
 			</div>
 		</div>
 		
-	</div>
+	</div>-->
 </div>
-
+<!--
 <br><br><br>
 <pre>
 	<?php print_r($this->session->all_userdata())?>
-</pre>
+</pre>-->
 <script type="text/javascript">
 $(function () {
     $('#container').highcharts({
