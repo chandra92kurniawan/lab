@@ -24,7 +24,7 @@ class M_dashboard extends CI_Model {
 	}
 	function countSmsPerMonth($a){
 		$this->db->where("month(SendingDateTime)='".$a."'");
-		$this->db->where("ear(SendingDateTime)='".date('Y')."'");
+		$this->db->where("year(SendingDateTime)='".date('Y')."'");
 		return $this->db->get('sentitems')->num_rows();
 	}
 }
