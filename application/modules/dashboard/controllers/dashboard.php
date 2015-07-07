@@ -16,7 +16,8 @@ class Dashboard extends CI_Controller {
 			$data['siswa']=$this->m_dashboard->getSiswaByNis();
 			$this->load->view('page_ortu',$data);
 		}else{
-			$this->load->view('page_index');
+			$data['arr']=$this->getGrafik();
+			$this->load->view('page_index',$data);
 		}
 	}
 	function update_siswa()
@@ -45,6 +46,53 @@ class Dashboard extends CI_Controller {
 			if (substr_count($hasil[$i], 'Service reply') > 0) ;$usd = $i;
 		}
 		echo $hasil[$usd];*/
+	}
+	function getGrafik()
+	{
+		$arr=array();
+		for($a=1;$a<=12;$a++){
+			$kirim=$this->m_dashboard->countSmsPerMonth($a);
+			$data['bulan']=$this->getStrBulan($a);
+			$data['jumlah']=$kirim;
+			array_push($arr, (object)$data);
+		}
+		/*echo "<pre>";
+		foreach($arr as $d=>$dd){
+			foreach($dd as $val=>$value){
+				echo $val." ";
+			}
+		}
+		print_r($arr);*/
+		return $arr;
+	}
+	function getStrBulan($bln)
+	{
+		if($bln==1){
+			$b="Januari";
+		}else if($bln==2){
+			$b="Februari";
+		}else if($bln==3){
+			$b="Maret";
+		}else if($bln==4){
+			$b="April";
+		}else if($bln==5){
+			$b="Mei";
+		}else if($bln==6){
+			$b="Juni";
+		}else if($bln==7){
+			$b="Juli";
+		}else if($bln==8){
+			$b="Agustus";
+		}else if($bln==9){
+			$b="September";
+		}else if($bln==10){
+			$b="Oktober";
+		}else if($bln==11){
+			$b="November";
+		}else if($bln==12){
+			$b="Desember";
+		}
+		return $b;
 	}
 }	
 

@@ -22,6 +22,11 @@ class M_dashboard extends CI_Model {
 		$this->db->join('kelas', 'kelas.id_kelas = siswa.id_kelas');
 		return $this->db->get('siswa')->row();
 	}
+	function countSmsPerMonth($a){
+		$this->db->where("month(SendingDateTime)='".$a."'");
+		$this->db->where("year(SendingDateTime)='".date('Y')."'");
+		return $this->db->get('sentitems')->num_rows();
+	}
 }
 
 /* End of file m_dashboard.php */
