@@ -142,10 +142,7 @@
             </div>
 
     <?php }?>
-<br><br><br>
-<pre>
-	<?php print_r($this->session->all_userdata())?>
-</pre>
+
 <script type="text/javascript">
     function isNumberKey(evt)
       {

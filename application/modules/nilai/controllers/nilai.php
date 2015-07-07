@@ -95,13 +95,23 @@
 		if($siswa){
 			$arr=array();
 			foreach($siswa as $s){
-				
+				$ex=explode(' ', $s->nama_siswa);
+				$nn="";
+				for($zz=0;$zz<=count($ex);$zz++){
+					if($zz==0){
+						$nn.=$ex[$zz];
+					}else{
+						$sub=substr($ex[$zz], 1,1);
+						$nn.=$sub;
+					}
+					$nn.=" ";
+				}
 				$pesan ="Nilai Telah Dikirim ";
 				//insert to outbox
-				
+					
 					$pelajaran= $this->M_nilai->ambildata($id_mata_pelajaran);
 					
-					$isipesan="Nilai harian Mata Pelajaran ".$pelajaran->nama_pelajaran." untuk siswa dengan nama " .$s->nama_siswa." pada materi ".$this->input->post('materi')." adalah ".$this->input->post('nilai_'.$s->nis)." ";
+					$isipesan="Nilai harian Mata Pelajaran ".$pelajaran->nama_pelajaran." untuk siswa dengan nama " .$nn." pada materi ".$this->input->post('materi')." adalah ".$this->input->post('nilai_'.$s->nis)." ";
 					
 					$data = array('DestinationNumber'=>$s->no_orang_tua,
 								'TextDecoded'=>$isipesan);
@@ -111,11 +121,7 @@
 				$dt=array('nis'=>$s->nis,
 							'nilai'=>$this->input->post('nilai_'.$s->nis),
 							'id_nilai'=>$id_nilai,
-<<<<<<< HEAD
 							'ID_sentitems'=>$ID_sentitems);
-=======
-							'ID_sentitems'=>$id_outbox);
->>>>>>> origin/master
 				array_push($arr, $dt);
 				//echo $s->nilai."<br>";
 			}

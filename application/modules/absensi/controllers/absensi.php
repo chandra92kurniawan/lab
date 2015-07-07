@@ -70,7 +70,7 @@ class Absensi extends CI_Controller {
 				if($abc==0){
 					$nama_siswa.=$nmSiswa[$abc];
 				}else{
-					$nama_siswa.=substr($nmSiswa[$abc],1);
+					$nama_siswa.=substr($nmSiswa[$abc],1,1);
 				}
 				$nama_siswa.=" ";
 			}
